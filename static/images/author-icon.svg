@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- 背景圆形 -->
+  <circle cx="12" cy="12" r="11" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1"/>
+  
+  <!-- 作者图标 -->
+  <g transform="translate(12, 12)">
+    <!-- 人物头像 -->
+    <circle cx="0" cy="-2" r="4" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+    
+    <!-- 人物身体 -->
+    <path d="M -4,3 C -4,0 4,0 4,3 L 4,6 C 4,7 3,8 0,8 C -3,8 -4,7 -4,6 Z" 
+          fill="none" stroke="#FFD700" stroke-width="1.5"/>
+    
+    <!-- 人物特征 -->
+    <circle cx="-1.5" cy="-3" r="0.7" fill="#7A9AC5"/>
+    <circle cx="1.5" cy="-3" r="0.7" fill="#7A9AC5"/>
+    <path d="M -1,-1 C 0,0 1,0 2,-1" stroke="#7A9AC5" stroke-width="0.7" fill="none"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="5" cy="5" r="0.5"/>
+    <circle cx="19" cy="5" r="0.5"/>
+    <circle cx="5" cy="19" r="0.5"/>
+    <circle cx="19" cy="19" r="0.5"/>
+  </g>
+  
+  <!-- 光芒效果 -->
+  <g stroke="#FFD700" stroke-width="0.5" opacity="0.6">
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+  </g>
+</svg>

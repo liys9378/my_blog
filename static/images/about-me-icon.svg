@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 背景圆形 -->
+  <circle cx="16" cy="16" r="15" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1"/>
+  
+  <!-- 关于我图标 -->
+  <g transform="translate(16, 16)">
+    <!-- 人物轮廓 -->
+    <circle cx="0" cy="-5" r="5" fill="none" stroke="#FFD700" stroke-width="1.5"/>
+    
+    <!-- 人物身体 -->
+    <path d="M -5,5 C -5,0 5,0 5,5 L 5,10 C 5,12 0,12 0,12 C 0,12 -5,12 -5,10 Z" 
+          fill="none" stroke="#FFD700" stroke-width="1.5"/>
+    
+    <!-- 望远镜 -->
+    <circle cx="-7" cy="-8" r="2" fill="none" stroke="#7A9AC5" stroke-width="1"/>
+    <circle cx="-10" cy="-8" r="2" fill="none" stroke="#7A9AC5" stroke-width="1"/>
+    <line x1="-5" y1="-8" x2="-3" y2="-5" stroke="#7A9AC5" stroke-width="1"/>
+    
+    <!-- 星星 -->
+    <path d="M 8,-8 L 8.5,-6.5 L 10,-6 L 8.5,-5.5 L 8,-4 L 7.5,-5.5 L 6,-6 L 7.5,-6.5 Z" 
+          fill="none" stroke="#7A9AC5" stroke-width="1"/>
+    <path d="M 9,-2 L 9.3,-1 L 10.3,-0.7 L 9.3,-0.4 L 9,0.6 L 8.7,-0.4 L 7.7,-0.7 L 8.7,-1 Z" 
+          fill="none" stroke="#7A9AC5" stroke-width="1"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="7" cy="7" r="0.6"/>
+    <circle cx="25" cy="7" r="0.6"/>
+    <circle cx="7" cy="25" r="0.6"/>
+    <circle cx="25" cy="25" r="0.6"/>
+  </g>
+  
+  <!-- 光芒效果 -->
+  <g stroke="#FFD700" stroke-width="0.5" opacity="0.6">
+    <line x1="16" y1="1" x2="16" y2="4"/>
+    <line x1="16" y1="28" x2="16" y2="31"/>
+    <line x1="1" y1="16" x2="4" y2="16"/>
+    <line x1="28" y1="16" x2="31" y2="16"/>
+  </g>
+</svg>

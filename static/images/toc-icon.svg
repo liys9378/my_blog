@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- 背景圆形 -->
+  <circle cx="12" cy="12" r="11" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1"/>
+  
+  <!-- 目录图标 -->
+  <g transform="translate(12, 12)">
+    <!-- 目录线条 -->
+    <line x1="-6" y1="-6" x2="6" y2="-6" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="-2" x2="6" y2="-2" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="2" x2="6" y2="2" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="6" x2="6" y2="6" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- 目录点 -->
+    <circle cx="-4" cy="-6" r="1" fill="#7A9AC5"/>
+    <circle cx="-2" cy="-2" r="1" fill="#7A9AC5"/>
+    <circle cx="-3" cy="2" r="1" fill="#7A9AC5"/>
+    <circle cx="-1" cy="6" r="1" fill="#7A9AC5"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="5" cy="5" r="0.5"/>
+    <circle cx="19" cy="5" r="0.5"/>
+    <circle cx="5" cy="19" r="0.5"/>
+    <circle cx="19" cy="19" r="0.5"/>
+  </g>
+  
+  <!-- 光芒效果 -->
+  <g stroke="#FFD700" stroke-width="0.5" opacity="0.6">
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- 背景圆形 -->
+  <circle cx="24" cy="24" r="23" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1"/>
+  
+  <!-- 搜索结果图标 -->
+  <g transform="translate(24, 24)">
+    <!-- 放大镜 -->
+    <circle cx="-8" cy="-8" r="10" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <line x1="-1" y1="-1" x2="10" y2="10" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- 搜索结果列表 -->
+    <rect x="-5" y="5" width="20" height="3" rx="1" ry="1" fill="none" stroke="#7A9AC5" stroke-width="1"/>
+    <rect x="-5" y="10" width="20" height="3" rx="1" ry="1" fill="none" stroke="#7A9AC5" stroke-width="1"/>
+    <rect x="-5" y="15" width="15" height="3" rx="1" ry="1" fill="none" stroke="#7A9AC5" stroke-width="1"/>
+    
+    <!-- 高亮匹配 -->
+    <rect x="-2" y="5" width="5" height="3" fill="#7A9AC5" opacity="0.5" rx="1" ry="1"/>
+    <rect x="5" y="10" width="5" height="3" fill="#7A9AC5" opacity="0.5" rx="1" ry="1"/>
+    <rect x="0" y="15" width="5" height="3" fill="#7A9AC5" opacity="0.5" rx="1" ry="1"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="10" cy="10" r="0.7"/>
+    <circle cx="38" cy="10" r="0.7"/>
+    <circle cx="10" cy="38" r="0.7"/>
+    <circle cx="38" cy="38" r="0.7"/>
+    <circle cx="24" cy="6" r="0.5"/>
+    <circle cx="24" cy="42" r="0.5"/>
+    <circle cx="6" cy="24" r="0.5"/>
+    <circle cx="42" cy="24" r="0.5"/>
+  </g>
+  
+  <!-- 脉冲效果 -->
+  <circle cx="24" cy="24" r="18" stroke="#FFD700" stroke-width="0.5" fill="none" opacity="0.3">
+    <animate attributeName="r" values="18;19;18" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- 光芒效果 -->
+  <g stroke="#FFD700" stroke-width="0.5" opacity="0.6">
+    <line x1="24" y1="1" x2="24" y2="5"/>
+    <line x1="24" y1="43" x2="24" y2="47"/>
+    <line x1="1" y1="24" x2="5" y2="24"/>
+    <line x1="43" y1="24" x2="47" y2="24"/>
+  </g>
+</svg>

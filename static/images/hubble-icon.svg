@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="90" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="2"/>
+  
+  <!-- 哈勃望远镜图标 -->
+  <g transform="translate(100, 100)">
+    <!-- 望远镜主体 -->
+    <rect x="-40" y="-10" width="80" height="20" fill="#1E3A5F" rx="5" ry="5"/>
+    
+    <!-- 太阳能电池板 -->
+    <rect x="-50" y="-30" width="100" height="10" fill="#4A6FA5"/>
+    <rect x="-50" y="20" width="100" height="10" fill="#4A6FA5"/>
+    
+    <!-- 连接结构 -->
+    <rect x="-5" y="-30" width="10" height="20" fill="#1E3A5F"/>
+    <rect x="-5" y="10" width="10" height="10" fill="#1E3A5F"/>
+    
+    <!-- 主镜筒 -->
+    <rect x="-35" y="-7" width="25" height="14" fill="#2C4C7C" rx="3" ry="3"/>
+    <circle cx="-22" cy="0" r="5" fill="#000000"/>
+    <circle cx="-22" cy="0" r="4" fill="#7A9AC5"/>
+    
+    <!-- 次镜支架 -->
+    <rect x="-10" y="-2" width="20" height="4" fill="#2C4C7C"/>
+    
+    <!-- 设备舱 -->
+    <rect x="10" y="-7" width="20" height="14" fill="#2C4C7C" rx="3" ry="3"/>
+    
+    <!-- 通信天线 -->
+    <circle cx="25" cy="0" r="4" fill="#1E3A5F"/>
+    <circle cx="25" cy="0" r="2" fill="#4A6FA5"/>
+  </g>
+  
+  <!-- 哈勃深场简化版 -->
+  <g transform="translate(100, 100) scale(0.5)">
+    <!-- 星系1 -->
+    <g transform="translate(-80, -80)">
+      <ellipse cx="0" cy="0" rx="15" ry="10" fill="#4A6FA5" opacity="0.3" transform="rotate(30 0 0)"/>
+      <ellipse cx="0" cy="0" rx="8" ry="5" fill="#7A9AC5" opacity="0.5" transform="rotate(30 0 0)"/>
+    </g>
+    
+    <!-- 星系2 -->
+    <g transform="translate(70, -60)">
+      <ellipse cx="0" cy="0" rx="12" ry="8" fill="#1E3A5F" opacity="0.3" transform="rotate(60 0 0)"/>
+      <ellipse cx="0" cy="0" rx="6" ry="4" fill="#4A6FA5" opacity="0.5" transform="rotate(60 0 0)"/>
+    </g>
+    
+    <!-- 星系3 -->
+    <g transform="translate(-60, 70)">
+      <ellipse cx="0" cy="0" rx="10" ry="7" fill="#7A9AC5" opacity="0.3" transform="rotate(45 0 0)"/>
+      <ellipse cx="0" cy="0" rx="5" ry="3" fill="#FFD700" opacity="0.5" transform="rotate(45 0 0)"/>
+    </g>
+    
+    <!-- 星系4 -->
+    <g transform="translate(80, 60)">
+      <ellipse cx="0" cy="0" rx="14" ry="9" fill="#1E3A5F" opacity="0.3" transform="rotate(15 0 0)"/>
+      <ellipse cx="0" cy="0" rx="7" ry="4" fill="#4A6FA5" opacity="0.5" transform="rotate(15 0 0)"/>
+    </g>
+  </g>
+  
+  <!-- 轨道环 -->
+  <ellipse cx="100" cy="100" rx="70" ry="25" fill="none" stroke="#4A6FA5" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="100" cy="100" rx="70" ry="25" fill="none" stroke="#4A6FA5" stroke-width="1" opacity="0.5" transform="rotate(60 100 100)"/>
+  <ellipse cx="100" cy="100" rx="70" ry="25" fill="none" stroke="#4A6FA5" stroke-width="1" opacity="0.5" transform="rotate(120 100 100)"/>
+  
+  <!-- 星星背景 -->
+  <g fill="#FFFFFF">
+    <circle cx="30" cy="30" r="1"/>
+    <circle cx="50" cy="170" r="1"/>
+    <circle cx="150" cy="40" r="1"/>
+    <circle cx="170" cy="160" r="1"/>
+    <circle cx="40" cy="100" r="1"/>
+    <circle cx="160" cy="100" r="1"/>
+    <circle cx="100" cy="40" r="1"/>
+    <circle cx="100" cy="160" r="1"/>
+    <circle cx="60" cy="60" r="1"/>
+    <circle cx="140" cy="140" r="1"/>
+    <circle cx="60" cy="140" r="1"/>
+    <circle cx="140" cy="60" r="1"/>
+  </g>
+  
+  <!-- 脉冲星 -->
+  <circle cx="75" cy="50" r="2" fill="#FFD700">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="75" cy="50" r="4" fill="#FFD700" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="125" cy="150" r="2" fill="#FFD700">
+    <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="125" cy="150" r="4" fill="#FFD700" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- 样式表 -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- 思维导图支持 -->
+    {{ if .Site.Params.enableMermaid }}
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    {{ end }}
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+    <!-- 页面顶部导航栏 -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-3d">
+                    <!-- 3D旋转的星云Logo区 -->
+                    <div class="nebula-logo"></div>
+                </div>
+                <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}" class="nav-link">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="site-main">
+        <div class="container">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于</h3>
+                    <p>{{ .Site.Params.description }}</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>分类</h3>
+                    <ul>
+                        {{ range first 5 (where .Site.RegularPages "Type" "in" (slice "categories")) }}
+                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <div class="social-links">
+                        {{ if .Site.Params.github }}
+                        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        {{ end }}
+                        
+                        {{ if .Site.Params.twitter }}
+                        <a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        {{ end }}
+                        
+                        {{ if .Site.Params.email }}
+                        <a href="mailto:{{ .Site.Params.email }}"><i class="fas fa-envelope"></i></a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    
+    <!-- 流星特效 -->
+    {{ if .Site.Params.enableMeteorEffect }}
+    <script src="/js/meteor-effect.js"></script>
+    {{ end }}
+    
+    <!-- 链接预览 -->
+    {{ if .Site.Params.enableLinkPreview }}
+    <script src="/js/link-preview.js"></script>
+    {{ end }}
+    
+    <!-- 思维导图初始化 -->
+    {{ if .Site.Params.enableMermaid }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true
+                }
+            });
+        });
+    </script>
+    {{ end }}
+</body>
+</html>

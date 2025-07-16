@@ -1,0 +1,209 @@
+{{ define "main" }}
+<div class="list-page">
+    <header class="list-header">
+        <h1 class="list-title">
+            {{ if eq .Kind "term" }}
+                {{ if eq .Type "categories" }}
+                    分类: {{ .Title }}
+                {{ else if eq .Type "tags" }}
+                    标签: {{ .Title }}
+                {{ else if eq .Type "series" }}
+                    系列: {{ .Title }}
+                {{ else }}
+                    {{ .Title }}
+                {{ end }}
+            {{ else }}
+                {{ .Title }}
+            {{ end }}
+        </h1>
+        
+        {{ if .Description }}
+        <div class="list-description">
+            {{ .Description }}
+        </div>
+        {{ end }}
+        
+        {{ if eq .Kind "taxonomy" }}
+        <div class="taxonomy-cloud">
+            {{ if eq .Type "categories" }}
+                <div class="categories-cloud">
+                    {{ range .Site.Taxonomies.categories }}
+                    <a href="{{ .Page.Permalink }}" class="category-item" style="font-size: {{ add 0.8 (mul 0.1 (math.Log .Count)) }}rem;">
+                        {{ .Page.Title }} <span class="count">({{ .Count }})</span>
+                    </a>
+                    {{ end }}
+                </div>
+            {{ else if eq .Type "tags" }}
+                <div class="tags-cloud">
+                    {{ range .Site.Taxonomies.tags }}
+                    <a href="{{ .Page.Permalink }}" class="tag-item" style="font-size: {{ add 0.8 (mul 0.1 (math.Log .Count)) }}rem;">
+                        {{ .Page.Title }} <span class="count">({{ .Count }})</span>
+                    </a>
+                    {{ end }}
+                </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="list-content">
+        {{ if eq .Kind "section" }}
+            {{ if eq .Type "resources" }}
+                <!-- 资源中心特殊布局 -->
+                <div class="resources-layout">
+                    <div class="resources-nav">
+                        <ul>
+                            <li><a href="#datasets" class="resource-nav-link">天文数据集</a></li>
+                            <li><a href="#tools" class="resource-nav-link">开源工具包</a></li>
+                            <li><a href="#learning" class="resource-nav-link">学习资料</a></li>
+                            <li><a href="#code-examples" class="resource-nav-link">代码示例</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resources-sections">
+                        <section id="datasets" class="resource-section">
+                            <h2>天文数据集</h2>
+                            <div class="resources-grid">
+                                {{ range where .Pages "Params.resource_type" "dataset" }}
+                                <div class="resource-card">
+                                    <h3>{{ .Title }}</h3>
+                                    <p>{{ .Summary }}</p>
+                                    <a href="{{ .Permalink }}" class="btn btn-outline">查看详情</a>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </section>
+                        
+                        <section id="tools" class="resource-section">
+                            <h2>开源工具包</h2>
+                            <div class="resources-grid">
+                                {{ range where .Pages "Params.resource_type" "tool" }}
+                                <div class="resource-card">
+                                    <h3>{{ .Title }}</h3>
+                                    <p>{{ .Summary }}</p>
+                                    <a href="{{ .Permalink }}" class="btn btn-outline">查看详情</a>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </section>
+                        
+                        <section id="learning" class="resource-section">
+                            <h2>学习资料</h2>
+                            <div class="resources-grid">
+                                {{ range where .Pages "Params.resource_type" "learning" }}
+                                <div class="resource-card">
+                                    <h3>{{ .Title }}</h3>
+                                    <p>{{ .Summary }}</p>
+                                    <a href="{{ .Permalink }}" class="btn btn-outline">查看详情</a>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </section>
+                        
+                        <section id="code-examples" class="resource-section">
+                            <h2>代码示例</h2>
+                            <div class="resources-grid">
+                                {{ range where .Pages "Params.resource_type" "code-example" }}
+                                <div class="resource-card">
+                                    <h3>{{ .Title }}</h3>
+                                    <p>{{ .Summary }}</p>
+                                    <a href="{{ .Permalink }}" class="btn btn-outline">查看详情</a>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            {{ else }}
+                <!-- 标准文章列表 -->
+                <div class="posts-list">
+                    {{ range .Pages }}
+                    <article class="post-item">
+                        {{ if .Params.image }}
+                        <div class="post-image">
+                            <a href="{{ .Permalink }}">
+                                <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                            </a>
+                        </div>
+                        {{ end }}
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                                {{ with .Params.categories }}
+                                <span class="post-categories">
+                                    {{ range . }}
+                                    <a href="/categories/{{ . | urlize }}/" class="post-category">{{ . }}</a>
+                                    {{ end }}
+                                </span>
+                                {{ end }}
+                            </div>
+                            <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                            <div class="post-excerpt">
+                                {{ .Summary }}
+                            </div>
+                            <div class="post-footer">
+                                <a href="{{ .Permalink }}" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                                {{ with .Params.tags }}
+                                <div class="post-tags">
+                                    {{ range . }}
+                                    <a href="/tags/{{ . | urlize }}/" class="post-tag">
+                                        <i class="fas fa-tag"></i> {{ . }}
+                                    </a>
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </article>
+                    {{ end }}
+                </div>
+            {{ end }}
+        {{ else }}
+            <!-- 分类/标签/系列文章列表 -->
+            <div class="posts-list">
+                {{ range .Pages }}
+                <article class="post-item">
+                    {{ if .Params.image }}
+                    <div class="post-image">
+                        <a href="{{ .Permalink }}">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                        </a>
+                    </div>
+                    {{ end }}
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                            {{ with .Params.categories }}
+                            <span class="post-categories">
+                                {{ range . }}
+                                <a href="/categories/{{ . | urlize }}/" class="post-category">{{ . }}</a>
+                                {{ end }}
+                            </span>
+                            {{ end }}
+                        </div>
+                        <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                        <div class="post-excerpt">
+                            {{ .Summary }}
+                        </div>
+                        <div class="post-footer">
+                            <a href="{{ .Permalink }}" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                            {{ with .Params.tags }}
+                            <div class="post-tags">
+                                {{ range . }}
+                                <a href="/tags/{{ . | urlize }}/" class="post-tag">
+                                    <i class="fas fa-tag"></i> {{ . }}
+                                </a>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

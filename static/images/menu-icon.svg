@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <!-- 背景圆形 -->
+  <circle cx="12" cy="12" r="11" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1"/>
+  
+  <!-- 菜单图标 -->
+  <g transform="translate(12, 12)">
+    <!-- 菜单线条 -->
+    <line x1="-6" y1="-5" x2="6" y2="-5" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-6" y1="0" x2="6" y2="0" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-6" y1="5" x2="6" y2="5" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="5" cy="5" r="0.5"/>
+    <circle cx="19" cy="5" r="0.5"/>
+    <circle cx="5" cy="19" r="0.5"/>
+    <circle cx="19" cy="19" r="0.5"/>
+  </g>
+  
+  <!-- 脉冲效果 -->
+  <circle cx="12" cy="12" r="9" stroke="#FFD700" stroke-width="0.5" fill="none" opacity="0.2">
+    <animate attributeName="r" values="9;10;9" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.1;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

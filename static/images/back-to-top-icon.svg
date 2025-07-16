@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <!-- 背景圆形 -->
+  <circle cx="20" cy="20" r="19" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1" opacity="0.8"/>
+  
+  <!-- 返回顶部图标 -->
+  <g transform="translate(20, 20)">
+    <!-- 上箭头 -->
+    <line x1="0" y1="8" x2="0" y2="-8" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+    <polyline points="-8,0 0,-8 8,0" stroke="#FFD700" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="8" cy="8" r="0.7"/>
+    <circle cx="32" cy="8" r="0.7"/>
+    <circle cx="8" cy="32" r="0.7"/>
+    <circle cx="32" cy="32" r="0.7"/>
+    <circle cx="20" cy="5" r="0.7"/>
+    <circle cx="20" cy="35" r="0.7"/>
+    <circle cx="5" cy="20" r="0.7"/>
+    <circle cx="35" cy="20" r="0.7"/>
+  </g>
+  
+  <!-- 脉冲效果 -->
+  <circle cx="20" cy="20" r="15" stroke="#FFD700" stroke-width="0.5" fill="none" opacity="0.3">
+    <animate attributeName="r" values="15;17;15" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#0B1A2F"/>
+  
+  <!-- 星空背景 -->
+  <g fill="#FFFFFF">
+    <!-- 随机小星星 -->
+    <circle cx="50" cy="75" r="1"/>
+    <circle cx="120" cy="30" r="1.2"/>
+    <circle cx="200" cy="150" r="0.8"/>
+    <circle cx="280" cy="90" r="1"/>
+    <circle cx="350" cy="180" r="1.1"/>
+    <circle cx="420" cy="60" r="0.9"/>
+    <circle cx="500" cy="120" r="1"/>
+    <circle cx="580" cy="200" r="0.7"/>
+    <circle cx="650" cy="80" r="1.2"/>
+    <circle cx="720" cy="170" r="0.8"/>
+    <circle cx="30" cy="250" r="0.8"/>
+    <circle cx="100" cy="320" r="1"/>
+    <circle cx="180" cy="270" r="1.2"/>
+    <circle cx="250" cy="350" r="0.9"/>
+    <circle cx="330" cy="290" r="1"/>
+    <circle cx="400" cy="380" r="0.7"/>
+    <circle cx="480" cy="240" r="1.1"/>
+    <circle cx="550" cy="330" r="0.8"/>
+    <circle cx="630" cy="280" r="1"/>
+    <circle cx="700" cy="360" r="1.2"/>
+    <circle cx="70" cy="430" r="1.1"/>
+    <circle cx="150" cy="490" r="0.8"/>
+    <circle cx="220" cy="420" r="1"/>
+    <circle cx="300" cy="500" r="1.2"/>
+    <circle cx="370" cy="450" r="0.9"/>
+    <circle cx="450" cy="520" r="1"/>
+    <circle cx="520" cy="470" r="0.7"/>
+    <circle cx="600" cy="540" r="1.1"/>
+    <circle cx="670" cy="480" r="0.8"/>
+    <circle cx="750" cy="550" r="1"/>
+    <circle cx="40" cy="580" r="0.7"/>
+  </g>
+  
+  <!-- 哈勃望远镜 -->
+  <g transform="translate(400, 300) rotate(15)">
+    <!-- 主体筒身 -->
+    <rect x="-120" y="-30" width="240" height="60" fill="#1E3A5F" rx="5" ry="5"/>
+    
+    <!-- 太阳能电池板 -->
+    <rect x="-150" y="-80" width="300" height="20" fill="#4A6FA5"/>
+    <rect x="-150" y="60" width="300" height="20" fill="#4A6FA5"/>
+    
+    <!-- 连接结构 -->
+    <rect x="-10" y="-80" width="20" height="50" fill="#1E3A5F"/>
+    <rect x="-10" y="30" width="20" height="30" fill="#1E3A5F"/>
+    
+    <!-- 主镜筒 -->
+    <rect x="-100" y="-20" width="60" height="40" fill="#2C4C7C" rx="5" ry="5"/>
+    <circle cx="-70" cy="0" r="15" fill="#000000"/>
+    <circle cx="-70" cy="0" r="12" fill="#7A9AC5"/>
+    
+    <!-- 次镜支架 -->
+    <rect x="-40" y="-5" width="80" height="10" fill="#2C4C7C"/>
+    
+    <!-- 设备舱 -->
+    <rect x="40" y="-25" width="50" height="50" fill="#2C4C7C" rx="5" ry="5"/>
+    
+    <!-- 通信天线 -->
+    <circle cx="80" cy="0" r="10" fill="#1E3A5F"/>
+    <circle cx="80" cy="0" r="5" fill="#4A6FA5"/>
+  </g>
+  
+  <!-- 哈勃标志性图像 - 简化版的鹰状星云 -->
+  <g transform="translate(200, 200) scale(0.8)">
+    <!-- 星云主体 -->
+    <path d="M 0,0 Q 30,-40 60,-20 T 100,0 T 60,20 T 0,0" fill="#4A6FA5" opacity="0.5"/>
+    
+    <!-- 星云内部结构 -->
+    <path d="M 20,-10 Q 40,-30 60,-10 T 80,0 T 60,10 T 20,-10" fill="#7A9AC5" opacity="0.6"/>
+    
+    <!-- 中心亮区 -->
+    <circle cx="50" cy="0" r="15" fill="#FFD700" opacity="0.7"/>
+    
+    <!-- 恒星 -->
+    <circle cx="50" cy="0" r="2" fill="#FFFFFF"/>
+    <circle cx="30" cy="-15" r="1.5" fill="#FFFFFF"/>
+    <circle cx="70" cy="10" r="1.5" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- 哈勃标志性图像 - 简化版的蝴蝶星云 -->
+  <g transform="translate(600, 200) scale(0.8)">
+    <!-- 星云主体 -->
+    <path d="M 0,0 Q -40,-30 -20,-60 T 0,-100 T 20,-60 T 0,0" fill="#1E3A5F" opacity="0.5"/>
+    <path d="M 0,0 Q 40,30 20,60 T 0,100 T -20,60 T 0,0" fill="#1E3A5F" opacity="0.5"/>
+    
+    <!-- 星云内部结构 -->
+    <path d="M 0,-20 Q -20,-40 -10,-60 T 0,-80 T 10,-60 T 0,-20" fill="#4A6FA5" opacity="0.6"/>
+    <path d="M 0,20 Q 20,40 10,60 T 0,80 T -10,60 T 0,20" fill="#4A6FA5" opacity="0.6"/>
+    
+    <!-- 中心亮区 -->
+    <circle cx="0" cy="0" r="10" fill="#FFD700" opacity="0.7"/>
+    
+    <!-- 恒星 -->
+    <circle cx="0" cy="0" r="2" fill="#FFFFFF"/>
+    <circle cx="-15" cy="-40" r="1.5" fill="#FFFFFF"/>
+    <circle cx="15" cy="40" r="1.5" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- 哈勃标志性图像 - 简化版的螺旋星系 -->
+  <g transform="translate(400, 450) scale(0.8)">
+    <!-- 星系核心 -->
+    <circle cx="0" cy="0" r="20" fill="#FFD700" opacity="0.5"/>
+    <circle cx="0" cy="0" r="10" fill="#FFFFFF" opacity="0.7"/>
+    
+    <!-- 星系旋臂 -->
+    <path d="M 0,0 Q 30,10 50,30 T 70,70" stroke="#4A6FA5" stroke-width="10" fill="none" opacity="0.5"/>
+    <path d="M 0,0 Q -30,-10 -50,-30 T -70,-70" stroke="#4A6FA5" stroke-width="10" fill="none" opacity="0.5"/>
+    <path d="M 0,0 Q -30,10 -50,30 T -70,70" stroke="#4A6FA5" stroke-width="10" fill="none" opacity="0.5"/>
+    <path d="M 0,0 Q 30,-10 50,-30 T 70,-70" stroke="#4A6FA5" stroke-width="10" fill="none" opacity="0.5"/>
+    
+    <!-- 星系中的恒星 -->
+    <circle cx="30" cy="30" r="1.5" fill="#FFFFFF"/>
+    <circle cx="-30" cy="-30" r="1.5" fill="#FFFFFF"/>
+    <circle cx="-30" cy="30" r="1.5" fill="#FFFFFF"/>
+    <circle cx="30" cy="-30" r="1.5" fill="#FFFFFF"/>
+    <circle cx="50" cy="50" r="1" fill="#FFFFFF"/>
+    <circle cx="-50" cy="-50" r="1" fill="#FFFFFF"/>
+    <circle cx="-50" cy="50" r="1" fill="#FFFFFF"/>
+    <circle cx="50" cy="-50" r="1" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- 时间线 -->
+  <g transform="translate(400, 550)">
+    <line x1="-300" y1="0" x2="300" y2="0" stroke="#FFFFFF" stroke-width="2"/>
+    
+    <!-- 时间点 -->
+    <circle cx="-250" cy="0" r="5" fill="#FFD700"/>
+    <text x="-250" y="-10" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">1990</text>
+    
+    <circle cx="-125" cy="0" r="5" fill="#FFD700"/>
+    <text x="-125" y="-10" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">2000</text>
+    
+    <circle cx="0" cy="0" r="5" fill="#FFD700"/>
+    <text x="0" y="-10" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">2010</text>
+    
+    <circle cx="125" cy="0" r="5" fill="#FFD700"/>
+    <text x="125" y="-10" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">2020</text>
+    
+    <circle cx="250" cy="0" r="5" fill="#FFD700"/>
+    <text x="250" y="-10" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">2030</text>
+  </g>
+  
+  <!-- 标题 -->
+  <text x="400" y="50" font-family="Arial" font-size="30" fill="#FFFFFF" text-anchor="middle">哈勃遗产计划</text>
+  <text x="400" y="80" font-family="Arial" font-size="18" fill="#FFD700" text-anchor="middle">30年太空探索的科学成果</text>
+</svg>

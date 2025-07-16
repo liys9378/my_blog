@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
+  <!-- 背景 -->
+  <rect width="1200" height="400" fill="#0B1A2F"/>
+  
+  <!-- 星空背景 -->
+  <g fill="#FFFFFF">
+    <!-- 随机小星星 -->
+    <circle cx="50" cy="75" r="1"/>
+    <circle cx="120" cy="30" r="1.2"/>
+    <circle cx="200" cy="150" r="0.8"/>
+    <circle cx="280" cy="90" r="1"/>
+    <circle cx="350" cy="180" r="1.1"/>
+    <circle cx="420" cy="60" r="0.9"/>
+    <circle cx="500" cy="120" r="1"/>
+    <circle cx="580" cy="200" r="0.7"/>
+    <circle cx="650" cy="80" r="1.2"/>
+    <circle cx="720" cy="170" r="0.8"/>
+    <circle cx="30" cy="250" r="0.8"/>
+    <circle cx="100" cy="320" r="1"/>
+    <circle cx="180" cy="270" r="1.2"/>
+    <circle cx="250" cy="350" r="0.9"/>
+    <circle cx="330" cy="290" r="1"/>
+    <circle cx="400" cy="380" r="0.7"/>
+    <circle cx="480" cy="240" r="1.1"/>
+    <circle cx="550" cy="330" r="0.8"/>
+    <circle cx="630" cy="280" r="1"/>
+    <circle cx="700" cy="360" r="1.2"/>
+    <circle cx="70" cy="30" r="1.1"/>
+    <circle cx="150" cy="90" r="0.8"/>
+    <circle cx="220" cy="20" r="1"/>
+    <circle cx="300" cy="100" r="1.2"/>
+    <circle cx="370" cy="50" r="0.9"/>
+    <circle cx="450" cy="120" r="1"/>
+    <circle cx="520" cy="70" r="0.7"/>
+    <circle cx="600" cy="140" r="1.1"/>
+    <circle cx="670" cy="80" r="0.8"/>
+    <circle cx="750" cy="150" r="1"/>
+    <circle cx="40" cy="180" r="0.7"/>
+    <circle cx="800" cy="75" r="1"/>
+    <circle cx="870" cy="30" r="1.2"/>
+    <circle cx="950" cy="150" r="0.8"/>
+    <circle cx="1030" cy="90" r="1"/>
+    <circle cx="1100" cy="180" r="1.1"/>
+    <circle cx="1170" cy="60" r="0.9"/>
+    <circle cx="850" cy="120" r="1"/>
+    <circle cx="930" cy="200" r="0.7"/>
+    <circle cx="1000" cy="80" r="1.2"/>
+    <circle cx="1070" cy="170" r="0.8"/>
+    <circle cx="780" cy="250" r="0.8"/>
+    <circle cx="850" cy="320" r="1"/>
+    <circle cx="930" cy="270" r="1.2"/>
+    <circle cx="1000" cy="350" r="0.9"/>
+    <circle cx="1080" cy="290" r="1"/>
+    <circle cx="1150" cy="380" r="0.7"/>
+    <circle cx="830" cy="240" r="1.1"/>
+    <circle cx="900" cy="330" r="0.8"/>
+    <circle cx="980" cy="280" r="1"/>
+    <circle cx="1050" cy="360" r="1.2"/>
+    <circle cx="820" cy="30" r="1.1"/>
+    <circle cx="900" cy="90" r="0.8"/>
+    <circle cx="970" cy="20" r="1"/>
+    <circle cx="1050" cy="100" r="1.2"/>
+    <circle cx="1120" cy="50" r="0.9"/>
+  </g>
+  
+  <!-- 脉冲星 -->
+  <g>
+    <circle cx="300" cy="150" r="3" fill="#FFD700">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="150" r="6" fill="#FFD700" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="900" cy="250" r="3" fill="#FFD700">
+      <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3;4;3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="250" r="6" fill="#FFD700" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="6;8;6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- 星云 -->
+  <g opacity="0.7">
+    <ellipse cx="500" cy="200" rx="300" ry="100" fill="#1E3A5F" opacity="0.3" transform="rotate(-15 500 200)"/>
+    <ellipse cx="500" cy="200" rx="250" ry="80" fill="#4A6FA5" opacity="0.2" transform="rotate(-15 500 200)"/>
+    <ellipse cx="500" cy="200" rx="200" ry="60" fill="#7A9AC5" opacity="0.1" transform="rotate(-15 500 200)"/>
+    
+    <ellipse cx="700" cy="150" rx="200" ry="70" fill="#1E3A5F" opacity="0.2" transform="rotate(20 700 150)"/>
+    <ellipse cx="700" cy="150" rx="150" ry="50" fill="#4A6FA5" opacity="0.1" transform="rotate(20 700 150)"/>
+  </g>
+  
+  <!-- 望远镜图标 -->
+  <g transform="translate(200, 200) rotate(-15)">
+    <!-- 望远镜主体 -->
+    <rect x="-60" y="-15" width="120" height="30" fill="#4A6FA5" rx="5" ry="5"/>
+    
+    <!-- 目镜 -->
+    <circle cx="-50" cy="0" r="20" fill="#1E3A5F"/>
+    <circle cx="-50" cy="0" r="15" fill="#7A9AC5"/>
+    
+    <!-- 物镜 -->
+    <circle cx="50" cy="0" r="25" fill="#1E3A5F"/>
+    <circle cx="50" cy="0" r="20" fill="#7A9AC5"/>
+    
+    <!-- 支架 -->
+    <rect x="-10" y="15" width="20" height="40" fill="#1E3A5F"/>
+    <rect x="-30" y="55" width="60" height="10" fill="#1E3A5F"/>
+  </g>
+  
+  <!-- 代码片段 -->
+  <g transform="translate(900, 180)">
+    <rect x="-150" y="-80" width="300" height="160" rx="10" ry="10" fill="#1E3A5F" opacity="0.8"/>
+    
+    <!-- 代码行 -->
+    <text x="-140" y="-50" font-family="Courier New" font-size="14" fill="#7A9AC5">from astropy.io import fits</text>
+    <text x="-140" y="-30" font-family="Courier New" font-size="14" fill="#FFFFFF">with fits.open('image.fits') as hdul:</text>
+    <text x="-140" y="-10" font-family="Courier New" font-size="14" fill="#FFFFFF">    data = hdul[0].data</text>
+    <text x="-140" y="10" font-family="Courier New" font-size="14" fill="#FFD700">    # 处理图像数据</text>
+    <text x="-140" y="30" font-family="Courier New" font-size="14" fill="#FFFFFF">    process_image(data)</text>
+    <text x="-140" y="50" font-family="Courier New" font-size="14" fill="#FFFFFF">    visualize_results(data)</text>
+  </g>
+  
+  <!-- 标题 -->
+  <g transform="translate(600, 100)">
+    <text x="0" y="0" font-family="Arial" font-size="48" fill="#FFFFFF" text-anchor="middle" font-weight="bold">天文技术博客</text>
+    <text x="0" y="60" font-family="Arial" font-size="24" fill="#FFD700" text-anchor="middle">探索宇宙的代码之旅</text>
+  </g>
+</svg>

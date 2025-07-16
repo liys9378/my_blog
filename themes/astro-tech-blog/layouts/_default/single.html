@@ -1,0 +1,181 @@
+{{ define "main" }}
+<article class="single-post">
+    <header class="post-header">
+        <div class="post-meta">
+            <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+            {{ with .Params.categories }}
+            <span class="post-categories">
+                {{ range . }}
+                <a href="/categories/{{ . | urlize }}/" class="post-category">{{ . }}</a>
+                {{ end }}
+            </span>
+            {{ end }}
+            <span class="post-reading-time">{{ .ReadingTime }} 分钟阅读</span>
+        </div>
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ with .Params.subtitle }}
+        <p class="post-subtitle">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.image }}
+        <div class="post-featured-image">
+            <img src="{{ . }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+        {{ with .Params.tags }}
+        <div class="post-tags">
+            {{ range . }}
+            <a href="/tags/{{ . | urlize }}/" class="post-tag">
+                <i class="fas fa-tag"></i> {{ . }}
+            </a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="post-toc">
+        <h3>目录</h3>
+        {{ .TableOfContents }}
+    </div>
+
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+    {{ if .Params.series }}
+    <div class="post-series">
+        <h3>系列文章: {{ .Params.series }}</h3>
+        <ul>
+            {{ $series := .Params.series }}
+            {{ range where .Site.RegularPages "Params.series" $series }}
+                <li>
+                    {{ if eq .Permalink $.Permalink }}
+                    <strong>{{ .Title }}</strong> (当前文章)
+                    {{ else }}
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    <div class="post-navigation">
+        <div class="post-nav-item post-nav-prev">
+            {{ with .PrevInSection }}
+            <span>上一篇</span>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+        </div>
+        <div class="post-nav-item post-nav-next">
+            {{ with .NextInSection }}
+            <span>下一篇</span>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ if .Site.DisqusShortname }}
+    <div class="post-comments">
+        {{ template "_internal/disqus.html" . }}
+    </div>
+    {{ end }}
+</article>
+
+<!-- 自定义脚本，用于增强文章页面功能 -->
+<script>
+    // 为代码块添加终端样式和语法提示
+    document.addEventListener('DOMContentLoaded', function() {
+        // 为Bash代码块添加终端样式
+        const bashCodeBlocks = document.querySelectorAll('pre code.language-bash');
+        bashCodeBlocks.forEach(block => {
+            const pre = block.parentElement;
+            pre.classList.add('terminal-style');
+            
+            // 添加终端标题栏
+            const terminalHeader = document.createElement('div');
+            terminalHeader.className = 'terminal-header';
+            terminalHeader.innerHTML = '<span class="terminal-button"></span><span class="terminal-button"></span><span class="terminal-button"></span><span class="terminal-title">Terminal</span>';
+            pre.insertBefore(terminalHeader, block);
+            
+            // 添加命令提示符
+            const content = block.innerHTML;
+            const lines = content.split('\n');
+            const processedLines = lines.map(line => {
+                if (line.trim() !== '') {
+                    return '<span class="prompt">$ </span>' + line;
+                }
+                return line;
+            });
+            block.innerHTML = processedLines.join('\n');
+        });
+        
+        // 为Python代码块添加Astropy库语法提示
+        const pythonCodeBlocks = document.querySelectorAll('pre code.language-python');
+        pythonCodeBlocks.forEach(block => {
+            const content = block.innerHTML;
+            
+            // 高亮Astropy相关库
+            const astropyPattern = /(import|from)\s+(astropy|numpy|scipy|matplotlib|pandas)([.\w\s,]*)/g;
+            const highlightedContent = content.replace(astropyPattern, '<span class="astropy-import">$1 $2$3</span>');
+            
+            // 高亮Astropy常用函数和类
+            const astropyFunctions = [
+                'fits\.open', 'Table', 'SkyCoord', 'Quantity', 'units', 'constants',
+                'cosmology', 'coordinates', 'time', 'timeseries', 'modeling', 'wcs',
+                'visualization', 'io', 'nddata', 'stats', 'convolution', 'uncertainty'
+            ];
+            
+            let processedContent = highlightedContent;
+            astropyFunctions.forEach(func => {
+                const pattern = new RegExp(`(astropy\\.${func}|${func})`, 'g');
+                processedContent = processedContent.replace(pattern, '<span class="astropy-function">$1</span>');
+            });
+            
+            block.innerHTML = processedContent;
+        });
+    });
+    
+    // 为arXiv链接添加直达按钮
+    document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a[href*="arxiv.org"]');
+        links.forEach(link => {
+            const arxivId = link.href.match(/\d+\.\d+/);
+            if (arxivId) {
+                const buttonContainer = document.createElement('span');
+                buttonContainer.className = 'arxiv-buttons';
+                buttonContainer.innerHTML = `
+                    <a href="https://arxiv.org/pdf/${arxivId[0]}.pdf" class="arxiv-button pdf" target="_blank" title="PDF">PDF</a>
+                    <a href="https://arxiv.org/abs/${arxivId[0]}" class="arxiv-button abstract" target="_blank" title="摘要">摘要</a>
+                `;
+                link.parentNode.insertBefore(buttonContainer, link.nextSibling);
+            }
+        });
+    });
+    
+    // 初始化星座连线动画效果（用于思维导图）
+    document.addEventListener('DOMContentLoaded', function() {
+        const mermaidDiagrams = document.querySelectorAll('.mermaid');
+        mermaidDiagrams.forEach(diagram => {
+            diagram.classList.add('constellation-effect');
+            
+            // 在渲染完成后添加动画效果
+            diagram.addEventListener('DOMNodeInserted', function(e) {
+                if (e.target.tagName === 'svg') {
+                    const svg = e.target;
+                    const edges = svg.querySelectorAll('path.edge');
+                    
+                    edges.forEach((edge, index) => {
+                        edge.classList.add('constellation-line');
+                        edge.style.animationDelay = `${index * 0.1}s`;
+                    });
+                    
+                    const nodes = svg.querySelectorAll('g.node');
+                    nodes.forEach(node => {
+                        node.classList.add('constellation-node');
+                    });
+                }
+            });
+        });
+    });
+</script>
+{{ end }}

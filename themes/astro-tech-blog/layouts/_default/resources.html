@@ -1,0 +1,114 @@
+{{ define "main" }}
+<div class="resources-page">
+  <div class="hero-section">
+    <div class="container">
+      <h1 class="page-title">{{ .Title }}</h1>
+      <div class="page-description">{{ .Description }}</div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="resources-content">
+      {{ .Content }}
+    </div>
+    
+    <div class="resources-grid">
+      <div class="resource-category">
+        <h3><i class="fas fa-database"></i> 数据集</h3>
+        <div class="resource-items">
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-star"></i></div>
+            <div class="resource-info">
+              <h4>哈勃深场数据集</h4>
+              <p>哈勃望远镜深场观测的原始和处理后数据</p>
+              <a href="/downloads/hubble-deep-field.zip" class="resource-link">下载 (1.2GB)</a>
+            </div>
+          </div>
+          
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-moon"></i></div>
+            <div class="resource-info">
+              <h4>月球高清地图</h4>
+              <p>月球表面高分辨率地图和地形数据</p>
+              <a href="/downloads/moon-map.zip" class="resource-link">下载 (850MB)</a>
+            </div>
+          </div>
+          
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-sun"></i></div>
+            <div class="resource-info">
+              <h4>太阳活动数据集</h4>
+              <p>太阳黑子和耀斑活动的长期观测数据</p>
+              <a href="/downloads/solar-activity.zip" class="resource-link">下载 (450MB)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-category">
+        <h3><i class="fas fa-tools"></i> 工具包</h3>
+        <div class="resource-items">
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fab fa-python"></i></div>
+            <div class="resource-info">
+              <h4>天文Python工具集</h4>
+              <p>天文数据处理和分析的Python脚本集合</p>
+              <a href="/downloads/astro-python-tools.zip" class="resource-link">下载 (15MB)</a>
+            </div>
+          </div>
+          
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-image"></i></div>
+            <div class="resource-info">
+              <h4>天文图像处理工作流</h4>
+              <p>用于处理天文图像的完整工作流程和脚本</p>
+              <a href="/downloads/astro-image-workflow.zip" class="resource-link">下载 (25MB)</a>
+            </div>
+          </div>
+          
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="resource-info">
+              <h4>光谱分析工具包</h4>
+              <p>用于天文光谱数据分析的专业工具</p>
+              <a href="/downloads/spectral-analysis-toolkit.zip" class="resource-link">下载 (30MB)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-category">
+        <h3><i class="fas fa-book"></i> 教程资料</h3>
+        <div class="resource-items">
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="resource-info">
+              <h4>天文Python入门指南</h4>
+              <p>从零开始学习天文Python编程</p>
+              <a href="/downloads/astro-python-guide.pdf" class="resource-link">下载 (8MB)</a>
+            </div>
+          </div>
+          
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-camera"></i></div>
+            <div class="resource-info">
+              <h4>天文摄影完全手册</h4>
+              <p>从设备选择到后期处理的全面指南</p>
+              <a href="/downloads/astrophotography-handbook.pdf" class="resource-link">下载 (12MB)</a>
+            </div>
+          </div>
+          
+          <div class="resource-item">
+            <div class="resource-icon"><i class="fas fa-satellite"></i></div>
+            <div class="resource-info">
+              <h4>射电天文学入门</h4>
+              <p>射电天文观测和数据分析基础</p>
+              <a href="/downloads/radio-astronomy-intro.pdf" class="resource-link">下载 (5MB)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

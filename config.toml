@@ -1,0 +1,63 @@
+baseURL = "http://example.org/"
+languageCode = "zh-cn"
+title = "天文技术博客"
+theme = "astro-tech-blog"
+
+# 启用代码高亮
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+# 启用Emoji支持
+enabledEmoji = true
+
+# 分类和标签设置
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# 菜单设置
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
+    weight = 2
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+  [[menu.main]]
+    identifier = "hubble"
+    name = "哈勃遗产计划"
+    url = "/series/hubble-legacy/"
+    weight = 4
+  [[menu.main]]
+    identifier = "resources"
+    name = "资源中心"
+    url = "/resources/"
+    weight = 5
+
+# 参数设置
+[params]
+  # 网站描述
+  description = "探索宇宙奥秘，分享天文技术"
+  # 主题颜色
+  mainColor = "#0B1A2F"  # 深空蓝
+  accentColor = "#FFD700"  # 脉冲星黄
+  # 社交媒体链接
+  github = "https://github.com/yourusername"
+  twitter = "https://twitter.com/yourusername"
+  email = "your.email@example.com"
+  # 启用特效
+  enableMeteorEffect = true
+  # 启用思维导图
+  enableMermaid = true
+  # 启用链接预览
+  enableLinkPreview = true

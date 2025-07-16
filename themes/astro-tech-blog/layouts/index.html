@@ -1,0 +1,154 @@
+{{ define "main" }}
+<div class="home-page">
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="stars-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">探索宇宙奥秘，分享天文技术</h1>
+            <p class="hero-subtitle">在这里，科学与技术交汇，揭示宇宙的壮丽与神秘</p>
+            <div class="hero-buttons">
+                <a href="/categories/" class="btn btn-primary">浏览分类</a>
+                <a href="/resources/" class="btn btn-secondary">资源中心</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新文章 -->
+    <section class="latest-posts">
+        <h2 class="section-title">最新文章</h2>
+        <div class="posts-grid">
+            {{ range first 6 (where .Site.RegularPages "Type" "posts") }}
+            <article class="post-card">
+                {{ if .Params.image }}
+                <div class="post-image">
+                    <a href="{{ .Permalink }}">
+                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                    </a>
+                </div>
+                {{ end }}
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+                        {{ with .Params.categories }}
+                        <span class="post-category">
+                            <a href="/categories/{{ index . 0 | urlize }}/">{{ index . 0 }}</a>
+                        </span>
+                        {{ end }}
+                    </div>
+                    <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <div class="post-excerpt">
+                        {{ .Summary | truncate 120 }}
+                    </div>
+                    <a href="{{ .Permalink }}" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="view-all">
+            <a href="/posts/" class="btn btn-outline">查看所有文章</a>
+        </div>
+    </section>
+
+    <!-- 分类展示 -->
+    <section class="categories-showcase">
+        <h2 class="section-title">探索分类</h2>
+        <div class="categories-grid">
+            <div class="category-card" style="background-image: url('/images/observation-tech.jpg');">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <h3>观测技术</h3>
+                    <p>探索现代天文观测的方法与工具</p>
+                    <a href="/categories/观测技术/" class="category-link">浏览文章</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('/images/data-processing.jpg');">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <h3>数据处理</h3>
+                    <p>天文数据的处理、分析与可视化</p>
+                    <a href="/categories/数据处理/" class="category-link">浏览文章</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('/images/astrophotography.jpg');">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <h3>天文摄影</h3>
+                    <p>捕捉宇宙的壮丽景象</p>
+                    <a href="/categories/天文摄影/" class="category-link">浏览文章</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('/images/academic-frontier.jpg');">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <h3>学术前沿</h3>
+                    <p>最新天文学研究与发现</p>
+                    <a href="/categories/学术前沿/" class="category-link">浏览文章</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色栏目：哈勃遗产计划 -->
+    <section class="featured-series">
+        <h2 class="section-title">哈勃遗产计划</h2>
+        <div class="series-content">
+            <div class="series-image">
+                <img src="/images/hubble-legacy.jpg" alt="哈勃遗产计划">
+            </div>
+            <div class="series-info">
+                <p>探索哈勃太空望远镜30年来的重大发现与科学贡献，深入了解这一人类最伟大的科学仪器如何改变了我们对宇宙的认知。</p>
+                <div class="series-stats">
+                    <div class="stat">
+                        <span class="stat-number">{{ len (where .Site.RegularPages "Params.series" "hubble-legacy") }}</span>
+                        <span class="stat-label">文章</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">年科学遗产</span>
+                    </div>
+                </div>
+                <a href="/series/hubble-legacy/" class="btn btn-primary">探索系列</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资源中心预览 -->
+    <section class="resources-preview">
+        <h2 class="section-title">资源中心</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>天文数据集</h3>
+                <p>各大天文台和太空任务的开放数据集</p>
+                <a href="/resources/datasets/" class="resource-link">浏览数据集</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>开源工具包</h3>
+                <p>天文数据处理与分析的开源软件</p>
+                <a href="/resources/tools/" class="resource-link">浏览工具</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>学习资料</h3>
+                <p>教程、电子书和学习指南</p>
+                <a href="/resources/learning/" class="resource-link">浏览资料</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>代码示例</h3>
+                <p>天文数据处理的代码示例</p>
+                <a href="/resources/code-examples/" class="resource-link">浏览代码</a>
+            </div>
+        </div>
+    </section>
+</div>
+{{ end }}

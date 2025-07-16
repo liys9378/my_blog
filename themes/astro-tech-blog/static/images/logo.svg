@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- 背景星空 -->
+  <rect width="200" height="200" fill="#0B1A2F" rx="10" ry="10"/>
+  
+  <!-- 星星点缀 -->
+  <g fill="#FFFFFF">
+    <circle cx="20" cy="30" r="1"/>
+    <circle cx="50" cy="15" r="1.2"/>
+    <circle cx="80" cy="40" r="0.8"/>
+    <circle cx="120" cy="20" r="1"/>
+    <circle cx="150" cy="35" r="1.1"/>
+    <circle cx="180" cy="25" r="0.9"/>
+    <circle cx="30" cy="60" r="1"/>
+    <circle cx="70" cy="70" r="0.7"/>
+    <circle cx="170" cy="60" r="1.2"/>
+    <circle cx="140" cy="80" r="0.8"/>
+    <circle cx="40" cy="160" r="1"/>
+    <circle cx="80" cy="170" r="0.9"/>
+    <circle cx="120" cy="150" r="1.1"/>
+    <circle cx="160" cy="180" r="0.8"/>
+    <circle cx="180" cy="140" r="1"/>
+  </g>
+  
+  <!-- 亮星 -->
+  <g>
+    <circle cx="60" cy="50" r="1.5" fill="#FFD700"/>
+    <circle cx="60" cy="50" r="3" fill="#FFD700" opacity="0.5"/>
+    
+    <circle cx="160" cy="120" r="1.5" fill="#FFD700"/>
+    <circle cx="160" cy="120" r="3" fill="#FFD700" opacity="0.5"/>
+    
+    <circle cx="40" cy="130" r="1.5" fill="#FFD700"/>
+    <circle cx="40" cy="130" r="3" fill="#FFD700" opacity="0.5"/>
+  </g>
+  
+  <!-- 星云 -->
+  <g>
+    <!-- 外层星云 -->
+    <ellipse cx="100" cy="100" rx="70" ry="60" fill="#1E3A5F" opacity="0.6"/>
+    
+    <!-- 中层星云 -->
+    <ellipse cx="100" cy="100" rx="50" ry="40" fill="#4A6FA5" opacity="0.5"/>
+    
+    <!-- 内层星云 -->
+    <ellipse cx="100" cy="100" rx="30" ry="25" fill="#7A9AC5" opacity="0.4"/>
+  </g>
+  
+  <!-- 中心星系 -->
+  <g>
+    <!-- 星系核心 -->
+    <circle cx="100" cy="100" r="15" fill="#FFD700" opacity="0.9"/>
+    <circle cx="100" cy="100" r="10" fill="#FFFFFF" opacity="0.8"/>
+    
+    <!-- 星系旋臂 -->
+    <path d="M 100 85 Q 130 90 140 70 T 170 80" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M 100 115 Q 130 110 140 130 T 170 120" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M 100 85 Q 70 90 60 70 T 30 80" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M 100 115 Q 70 110 60 130 T 30 120" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.7"/>
+    
+    <!-- 星系尘埃 -->
+    <g fill="#FFFFFF" opacity="0.8">
+      <circle cx="120" cy="85" r="1"/>
+      <circle cx="130" cy="75" r="0.8"/>
+      <circle cx="140" cy="80" r="1.2"/>
+      <circle cx="125" cy="90" r="0.9"/>
+      
+      <circle cx="120" cy="115" r="1"/>
+      <circle cx="130" cy="125" r="0.8"/>
+      <circle cx="140" cy="120" r="1.2"/>
+      <circle cx="125" cy="110" r="0.9"/>
+      
+      <circle cx="80" cy="85" r="1"/>
+      <circle cx="70" cy="75" r="0.8"/>
+      <circle cx="60" cy="80" r="1.2"/>
+      <circle cx="75" cy="90" r="0.9"/>
+      
+      <circle cx="80" cy="115" r="1"/>
+      <circle cx="70" cy="125" r="0.8"/>
+      <circle cx="60" cy="120" r="1.2"/>
+      <circle cx="75" cy="110" r="0.9"/>
+    </g>
+  </g>
+  
+  <!-- 光芒效果 -->
+  <g opacity="0.6">
+    <line x1="100" y1="70" x2="100" y2="50" stroke="#FFD700" stroke-width="1"/>
+    <line x1="100" y1="130" x2="100" y2="150" stroke="#FFD700" stroke-width="1"/>
+    <line x1="70" y1="100" x2="50" y2="100" stroke="#FFD700" stroke-width="1"/>
+    <line x1="130" y1="100" x2="150" y2="100" stroke="#FFD700" stroke-width="1"/>
+    
+    <line x1="85" y1="85" x2="70" y2="70" stroke="#FFD700" stroke-width="1"/>
+    <line x1="115" y1="85" x2="130" y2="70" stroke="#FFD700" stroke-width="1"/>
+    <line x1="85" y1="115" x2="70" y2="130" stroke="#FFD700" stroke-width="1"/>
+    <line x1="115" y1="115" x2="130" y2="130" stroke="#FFD700" stroke-width="1"/>
+  </g>
+  
+  <!-- 脉冲效果 (用于动画) -->
+  <circle cx="100" cy="100" r="20" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.5">
+    <animate attributeName="r" values="20;40;20" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="100" cy="100" r="25" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="25;45;25" dur="4s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  
+  <circle cx="100" cy="100" r="30" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.1">
+    <animate attributeName="r" values="30;50;30" dur="4s" repeatCount="indefinite" begin="2s"/>
+    <animate attributeName="opacity" values="0.1;0;0.1" dur="4s" repeatCount="indefinite" begin="2s"/>
+  </circle>
+</svg>

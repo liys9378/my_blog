@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- 背景圆形 -->
+  <circle cx="24" cy="24" r="23" fill="#0B1A2F" stroke="#4A6FA5" stroke-width="1"/>
+  
+  <!-- 404错误图标 -->
+  <g transform="translate(24, 24)">
+    <!-- 404文字 -->
+    <text x="-15" y="5" font-family="Arial" font-size="18" font-weight="bold" fill="#FFD700">404</text>
+    
+    <!-- 迷失的宇航员 -->
+    <circle cx="10" cy="0" r="5" fill="none" stroke="#7A9AC5" stroke-width="1.5"/> <!-- 头盔 -->
+    <rect x="7" y="5" width="6" height="8" rx="2" ry="2" fill="none" stroke="#7A9AC5" stroke-width="1.5"/> <!-- 身体 -->
+    <line x1="7" y1="7" x2="4" y2="10" stroke="#7A9AC5" stroke-width="1.5" stroke-linecap="round"/> <!-- 左臂 -->
+    <line x1="13" y1="7" x2="16" y2="4" stroke="#7A9AC5" stroke-width="1.5" stroke-linecap="round"/> <!-- 右臂 -->
+    <line x1="9" y1="13" x2="7" y2="18" stroke="#7A9AC5" stroke-width="1.5" stroke-linecap="round"/> <!-- 左腿 -->
+    <line x1="11" y1="13" x2="13" y2="18" stroke="#7A9AC5" stroke-width="1.5" stroke-linecap="round"/> <!-- 右腿 -->
+    
+    <!-- 氧气管 -->
+    <path d="M 10,-5 C 8,-8 5,-7 5,-10" fill="none" stroke="#7A9AC5" stroke-width="1" stroke-linecap="round"/>
+    
+    <!-- 面罩反光 -->
+    <path d="M 8,-1 L 9,-2 L 11,-1" fill="none" stroke="#FFD700" stroke-width="0.7"/>
+    
+    <!-- 断开的链接 -->
+    <path d="M -15,-5 L -10,-5 C -8,-5 -8,-3 -10,-3 L -15,-3 C -17,-3 -17,-5 -15,-5 Z" fill="none" stroke="#7A9AC5" stroke-width="1.5"/>
+    <path d="M -5,-5 L 0,-5 C 2,-5 2,-3 0,-3 L -5,-3 C -7,-3 -7,-5 -5,-5 Z" fill="none" stroke="#7A9AC5" stroke-width="1.5"/>
+    <line x1="-10" y1="-4" x2="-7" y2="-4" stroke="#7A9AC5" stroke-width="1.5" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- 星星装饰 -->
+  <g fill="#FFFFFF">
+    <circle cx="10" cy="10" r="0.7"/>
+    <circle cx="38" cy="10" r="0.7"/>
+    <circle cx="10" cy="38" r="0.7"/>
+    <circle cx="38" cy="38" r="0.7"/>
+    <circle cx="24" cy="6" r="0.5"/>
+    <circle cx="24" cy="42" r="0.5"/>
+    <circle cx="6" cy="24" r="0.5"/>
+    <circle cx="42" cy="24" r="0.5"/>
+    
+    <!-- 随机星星 -->
+    <circle cx="15" cy="15" r="0.4"/>
+    <circle cx="33" cy="15" r="0.4"/>
+    <circle cx="15" cy="33" r="0.4"/>
+    <circle cx="33" cy="33" r="0.4"/>
+    <circle cx="20" cy="10" r="0.3"/>
+    <circle cx="28" cy="10" r="0.3"/>
+    <circle cx="20" cy="38" r="0.3"/>
+    <circle cx="28" cy="38" r="0.3"/>
+  </g>
+  
+  <!-- 脉冲效果 -->
+  <circle cx="24" cy="24" r="18" stroke="#FFD700" stroke-width="0.5" fill="none" opacity="0.3">
+    <animate attributeName="r" values="18;19;18" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#0B1A2F"/>
+  
+  <!-- 网格背景 -->
+  <g stroke="#1E3A5F" stroke-width="1">
+    <!-- 水平线 -->
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="0" y1="550" x2="800" y2="550"/>
+    
+    <!-- 垂直线 -->
+    <line x1="50" y1="0" x2="50" y2="600"/>
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="150" y1="0" x2="150" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="250" y1="0" x2="250" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="350" y1="0" x2="350" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="450" y1="0" x2="450" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="550" y1="0" x2="550" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="650" y1="0" x2="650" y2="600"/>
+    <line x1="700" y1="0" x2="700" y2="600"/>
+    <line x1="750" y1="0" x2="750" y2="600"/>
+  </g>
+  
+  <!-- 数据处理流程图 -->
+  <g>
+    <!-- 连接线 -->
+    <path d="M 150,150 L 300,150 L 300,250 L 450,250 L 450,350 L 600,350" 
+          stroke="#FFD700" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+    
+    <!-- 节点1：原始数据 -->
+    <g transform="translate(150, 150)">
+      <rect x="-60" y="-40" width="120" height="80" rx="10" ry="10" fill="#1E3A5F" stroke="#4A6FA5" stroke-width="2"/>
+      <text x="0" y="-10" font-family="Arial" font-size="14" fill="#FFFFFF" text-anchor="middle">原始数据</text>
+      <text x="0" y="10" font-family="Arial" font-size="12" fill="#AAAAAA" text-anchor="middle">FITS格式</text>
+      <circle cx="-40" cy="-20" r="3" fill="#FF0000"/>
+      <circle cx="-30" cy="-20" r="3" fill="#00FF00"/>
+      <circle cx="-20" cy="-20" r="3" fill="#0000FF"/>
+    </g>
+    
+    <!-- 节点2：预处理 -->
+    <g transform="translate(300, 250)">
+      <rect x="-60" y="-40" width="120" height="80" rx="10" ry="10" fill="#1E3A5F" stroke="#4A6FA5" stroke-width="2"/>
+      <text x="0" y="-10" font-family="Arial" font-size="14" fill="#FFFFFF" text-anchor="middle">预处理</text>
+      <text x="0" y="10" font-family="Arial" font-size="12" fill="#AAAAAA" text-anchor="middle">校准与对齐</text>
+      
+      <!-- 小图标：滤波器 -->
+      <rect x="-30" y="-25" width="60" height="10" fill="#7A9AC5" opacity="0.8"/>
+      <rect x="-20" y="-15" width="40" height="10" fill="#7A9AC5" opacity="0.6"/>
+      <rect x="-10" y="-5" width="20" height="10" fill="#7A9AC5" opacity="0.4"/>
+    </g>
+    
+    <!-- 节点3：分析 -->
+    <g transform="translate(450, 350)">
+      <rect x="-60" y="-40" width="120" height="80" rx="10" ry="10" fill="#1E3A5F" stroke="#4A6FA5" stroke-width="2"/>
+      <text x="0" y="-10" font-family="Arial" font-size="14" fill="#FFFFFF" text-anchor="middle">数据分析</text>
+      <text x="0" y="10" font-family="Arial" font-size="12" fill="#AAAAAA" text-anchor="middle">测光与光谱</text>
+      
+      <!-- 小图标：图表 -->
+      <polyline points="-30,20 -20,10 -10,15 0,5 10,8 20,0 30,12" 
+                stroke="#FFD700" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- 节点4：结果 -->
+    <g transform="translate(600, 350)">
+      <rect x="-60" y="-40" width="120" height="80" rx="10" ry="10" fill="#1E3A5F" stroke="#4A6FA5" stroke-width="2"/>
+      <text x="0" y="-10" font-family="Arial" font-size="14" fill="#FFFFFF" text-anchor="middle">科学结果</text>
+      <text x="0" y="10" font-family="Arial" font-size="12" fill="#AAAAAA" text-anchor="middle">发现与发布</text>
+      
+      <!-- 小图标：星系 -->
+      <circle cx="0" cy="0" r="15" fill="#FFD700" opacity="0.3"/>
+      <ellipse cx="0" cy="0" rx="25" ry="10" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.5"/>
+    </g>
+  </g>
+  
+  <!-- 数据可视化示例 -->
+  <g transform="translate(200, 450)">
+    <!-- 坐标轴 -->
+    <line x1="0" y1="0" x2="0" y2="-100" stroke="#FFFFFF" stroke-width="2"/>
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#FFFFFF" stroke-width="2"/>
+    
+    <!-- 数据点 -->
+    <circle cx="10" cy="-20" r="3" fill="#FFD700"/>
+    <circle cx="20" cy="-35" r="3" fill="#FFD700"/>
+    <circle cx="30" cy="-25" r="3" fill="#FFD700"/>
+    <circle cx="40" cy="-50" r="3" fill="#FFD700"/>
+    <circle cx="50" cy="-65" r="3" fill="#FFD700"/>
+    <circle cx="60" cy="-55" r="3" fill="#FFD700"/>
+    <circle cx="70" cy="-70" r="3" fill="#FFD700"/>
+    <circle cx="80" cy="-80" r="3" fill="#FFD700"/>
+    <circle cx="90" cy="-75" r="3" fill="#FFD700"/>
+    
+    <!-- 趋势线 -->
+    <path d="M 10,-20 L 20,-35 L 30,-25 L 40,-50 L 50,-65 L 60,-55 L 70,-70 L 80,-80 L 90,-75" 
+          stroke="#4A6FA5" stroke-width="2" fill="none"/>
+    
+    <!-- 标签 -->
+    <text x="50" y="15" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">光度曲线</text>
+  </g>
+  
+  <!-- 光谱示例 -->
+  <g transform="translate(600, 450)">
+    <!-- 坐标轴 -->
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#FFFFFF" stroke-width="2"/>
+    <line x1="-100" y1="0" x2="-100" y2="-100" stroke="#FFFFFF" stroke-width="2"/>
+    
+    <!-- 光谱线 -->
+    <path d="M -100,-10 L -90,-12 L -80,-15 L -70,-10 L -60,-8 L -50,-40 L -40,-10 
+             L -30,-8 L -20,-12 L -10,-15 L 0,-10 L 10,-8 L 20,-60 L 30,-10 
+             L 40,-12 L 50,-15 L 60,-10 L 70,-8 L 80,-30 L 90,-10 L 100,-12" 
+          stroke="#7A9AC5" stroke-width="2" fill="none"/>
+    
+    <!-- 吸收线 -->
+    <line x1="-50" y1="0" x2="-50" y2="-40" stroke="#FF0000" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="20" y1="0" x2="20" y2="-60" stroke="#FF0000" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="80" y1="0" x2="80" y2="-30" stroke="#FF0000" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <!-- 标签 -->
+    <text x="0" y="15" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">光谱分析</text>
+  </g>
+  
+  <!-- Python代码片段 -->
+  <g transform="translate(400, 150)">
+    <rect x="-150" y="-60" width="300" height="120" rx="5" ry="5" fill="#1E3A5F" stroke="#4A6FA5" stroke-width="2"/>
+    
+    <!-- 代码文本 -->
+    <text x="-140" y="-40" font-family="Courier New" font-size="12" fill="#7A9AC5">import numpy as np</text>
+    <text x="-140" y="-25" font-family="Courier New" font-size="12" fill="#7A9AC5">from astropy.io import fits</text>
+    <text x="-140" y="-10" font-family="Courier New" font-size="12" fill="#FFFFFF">def process_image(file_path):</text>
+    <text x="-140" y="5" font-family="Courier New" font-size="12" fill="#FFD700">    # 加载FITS文件</text>
+    <text x="-140" y="20" font-family="Courier New" font-size="12" fill="#FFFFFF">    with fits.open(file_path) as hdul:</text>
+    <text x="-140" y="35" font-family="Courier New" font-size="12" fill="#FFFFFF">        data = hdul[0].data</text>
+    <text x="-140" y="50" font-family="Courier New" font-size="12" fill="#FFFFFF">    return data</text>
+  </g>
+  
+  <!-- 标题 -->
+  <text x="400" y="50" font-family="Arial" font-size="30" fill="#FFFFFF" text-anchor="middle">天文数据处理</text>
+  <text x="400" y="80" font-family="Arial" font-size="18" fill="#FFD700" text-anchor="middle">从原始图像到科学发现</text>
+</svg>

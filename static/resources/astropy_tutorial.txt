@@ -1,0 +1,164 @@
+# Astropy 基础教程
+
+## 简介
+
+Astropy 是一个用于天文学的 Python 库，提供了许多用于处理天文数据的工具和功能。本教程将介绍 Astropy 的基本用法。
+
+## 安装
+
+```bash
+pip install astropy
+```
+
+## 基本用法
+
+### 导入 Astropy
+
+```python
+import astropy
+from astropy.io import fits
+from astropy.wcs import WCS
+from astropy.coordinates import SkyCoord
+from astropy import units as u
+from astropy.time import Time
+```
+
+### 处理 FITS 文件
+
+FITS (Flexible Image Transport System) 是天文学中常用的文件格式，用于存储图像和表格数据。
+
+```python
+# 打开 FITS 文件
+hdul = fits.open('image.fits')
+
+# 查看文件信息
+hdul.info()
+
+# 访问主数据
+data = hdul[0].data
+header = hdul[0].header
+
+# 关闭文件
+hdul.close()
+
+# 或者使用 with 语句自动关闭
+with fits.open('image.fits') as hdul:
+    data = hdul[0].data
+    header = hdul[0].header
+```
+
+### 使用天文坐标
+
+```python
+# 创建天球坐标
+coord = SkyCoord(ra=10.68458*u.deg, dec=41.26917*u.deg, frame='icrs')
+
+# 格式化输出
+print(coord.to_string('hmsdms'))
+
+# 坐标转换
+galactic = coord.galactic
+print(f"银道坐标: {galactic.l.deg}, {galactic.b.deg}")
+```
+
+### 使用天文单位
+
+```python
+# 定义距离
+distance = 150 * u.pc
+
+# 转换单位
+print(f"距离（光年）: {distance.to(u.lyr)}")
+
+# 计算
+velocity = 20 * u.km / u.s
+time = 1 * u.Myr
+distance_traveled = velocity * time
+print(f"行进距离: {distance_traveled.to(u.pc)}")
+```
+
+### 处理时间
+
+```python
+# 创建时间对象
+t = Time('2020-01-01T00:00:00', format='isot', scale='utc')
+
+# 不同格式输出
+print(f"ISO格式: {t.iso}")
+print(f"JD格式: {t.jd}")
+print(f"MJD格式: {t.mjd}")
+
+# 时间计算
+t2 = t + 1 * u.day
+print(f"一天后: {t2.iso}")
+```
+
+### 世界坐标系统 (WCS)
+
+```python
+# 从 FITS 头信息创建 WCS 对象
+wcs = WCS(header)
+
+# 像素坐标转换为天球坐标
+pixel = np.array([[100, 100]], dtype=np.float64)
+world = wcs.wcs_pix2world(pixel, 0)
+print(f"天球坐标: {world}")
+
+# 天球坐标转换为像素坐标
+world = np.array([[10.68458, 41.26917]], dtype=np.float64)
+pixel = wcs.wcs_world2pix(world, 0)
+print(f"像素坐标: {pixel}")
+```
+
+## 进阶应用
+
+### 光谱分析
+
+```python
+from astropy.modeling import models, fitting
+
+# 创建高斯模型拟合光谱线
+g_init = models.Gaussian1D(amplitude=1., mean=5000., stddev=10.)
+x = np.linspace(4900, 5100, 200)
+y = g_init(x) + np.random.normal(0, 0.1, x.shape)
+
+# 拟合模型
+fit_g = fitting.LevMarLSQFitter()
+g = fit_g(g_init, x, y)
+
+print(f"拟合结果 - 振幅: {g.amplitude.value}, 中心: {g.mean.value}, 宽度: {g.stddev.value}")
+```
+
+### 表格数据处理
+
+```python
+from astropy.table import Table
+
+# 创建表格
+t = Table()
+t['name'] = ['天鹅座', '猎户座', '大熊座']
+t['ra'] = [20.62, 5.58, 10.67] * u.hour
+t['dec'] = [45.28, -2.4, 55.38] * u.deg
+t['distance'] = [1500, 1300, 120] * u.lyr
+
+# 显示表格
+print(t)
+
+# 保存为 FITS 表格
+t.write('constellations.fits', overwrite=True)
+
+# 保存为 CSV
+t.write('constellations.csv', overwrite=True)
+```
+
+## 结论
+
+Astropy 是天文数据分析的强大工具，本教程仅介绍了其基本功能。更多高级功能和详细文档，请访问 [Astropy 官方文档](https://docs.astropy.org/)。
+
+## 练习
+
+1. 加载一个 FITS 图像文件，显示其数据和头信息。
+2. 创建一个包含多个天体坐标的表格，并转换为银道坐标系。
+3. 使用 Astropy 的模型拟合功能，拟合一个光谱中的发射线。
+4. 计算两个天体之间的角距离。
+5. 将 MJD 时间转换为 ISO 格式，并计算两个时间点之间的时间差。
